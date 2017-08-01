@@ -11,6 +11,9 @@ mongoose.connect('mongodb://localhost/ninjago');
 // overriding mongoose Promise with the global object's Promise
 mongoose.Promise = global.Promise;
 
+// to serve html pages
+app.use(express.static('public'));
+
 app.use(bodyParser.json());
 // initialize routes
 app.use('/api',require('./routes/api'));
